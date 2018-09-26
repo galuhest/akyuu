@@ -86,16 +86,15 @@ func runInterface(intf interface{}, ret ...interface{}) (interface{}, error) {
 	// return value is more than 2
 	if retAmt > 2 {
 		return nil, errors.New("Too many return value (max 2)")
-	} else if retAmt == 2 {
-		res = fn.Call([]reflect.Value{})
+	} 
+
+	res = fn.Call([]reflect.Value{})
+	if retAmt == 2 {
 		err := res[1].Interface()
 
 		if err != nil {
 			return nil, errors.New(fmt.Sprintf("%s",err))
 		}
-	} else {
-		res = fn.Call([]reflect.Value{})
 	}
-
 	return res[0].Interface(), nil
 }

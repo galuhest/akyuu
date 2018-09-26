@@ -44,13 +44,13 @@ func TestFetchItem(t * testing.T) {
 
 	ak, err := akyuu.New(ss)
 
-	_, err = ak.Fetch(returnStruct, "example", 100)
+	_, err = ak.Fetch(returnStruct, "example", 10)
 	assert.Equal(t, nil, err)
 
-	_, err = ak.Fetch(returnStruct, "example", 100)
+	_, err = ak.Fetch(returnStruct, "example", 10)
 	assert.NotNil(t, err)
 
-	_, err = ak.Fetch(returnError, "error", 100)
+	_, err = ak.Fetch(returnError, "error", 10)
 	assert.NotNil(t, err)
 }
 
@@ -58,6 +58,6 @@ func returnError() (int, error) {
 	return 1, errors.New("an error")
 }
 
-func returnStruct() (int, error) {
-	return 1, nil
+func returnStruct() (*Example, error) {
+	return &Example{Id: 1}, nil
 }

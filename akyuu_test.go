@@ -46,12 +46,12 @@ func TestFetchItem(t * testing.T) {
 
 	_, err = ak.Fetch(returnStruct, "example", 100)
 	assert.Equal(t, nil, err)
-	
+
 	_, err = ak.Fetch(returnStruct, "example", 100)
-	assert.Equal(t, nil, err)
+	assert.NotNil(t, err)
 
 	_, err = ak.Fetch(returnError, "error", 100)
-	assert.Equal(t, nil, err)
+	assert.NotNil(t, err)
 }
 
 func returnError() (int, error) {

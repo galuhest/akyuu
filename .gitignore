@@ -1,0 +1,42 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# code coverage report
+coverage.html
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# Gemfile
+Gemfile
+Gemfile.lock
+
+# Rakefile
+Rakefile
+
+# depencendies directory
+vendor/**/
+
+# environment variables
+.env
+
+# build directory
+_output/
+
+# binary for web service compilation
+web.local
+
+# vscode
+.vscode
+
+# outputgging
+*.txt

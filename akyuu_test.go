@@ -52,6 +52,9 @@ func TestFetchItem(t * testing.T) {
 
 	_, err = ak.Fetch(returnError, "error", 10)
 	assert.NotNil(t, err)
+
+	_, err = ak.Fetch(returnStructWithError, "error", 10)
+	assert.NotNil(t, err)
 }
 
 func returnError() (int, error) {
@@ -60,4 +63,8 @@ func returnError() (int, error) {
 
 func returnStruct() (*Example, error) {
 	return &Example{Id: 1}, nil
+}
+
+func returnStructWithError() (*Example, error) {
+	return nil, errors.New("an error")
 }

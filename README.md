@@ -47,8 +47,18 @@ func main() {
 
 	ak, err := akyuu.New(ss)
 
-	// ********* valid function call *********
+	// function call example
+
+	//as a function
+	res, err := ak.Fetch(FunctionOne, "example", 10)
 	
+	//a value
+	res, err = ak.Fetch(FunctionOne(), "example2", 10)
+
+	strt := &Example{Id: 10}
+	res, err = ak.Fetch(FunctionFour(strt), "example3", 10)
+
+	res, err = ak.Fetch(FunctionFive(2), "example", 10)
 
 }
 

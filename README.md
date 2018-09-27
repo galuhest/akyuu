@@ -20,6 +20,18 @@ See [Contact and On-Call Information](https://bukalapak.atlassian.net/wiki/displ
 
 ## Usage
 
+Akyuu is composed of 2 function, `New` and `Fetch`.
+
+`New` need a dallimin Ring struct as parameter.
+```golang
+func New(*dallimin.Ring) (*Connection, error)
+```
+`Fetch` need 3 parameter, a Task in the form of `function` or `value`, a string that will be used as `key`, and an integer as `exipration time`.
+```golang
+func Fetch(interface{}, string, int32)
+```
+### Example
+
 ```golang
 import (
 	"errors"

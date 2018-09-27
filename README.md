@@ -30,7 +30,9 @@ func New(*dallimin.Ring) (*Connection, error)
 ```golang
 func Fetch(interface{}, string, int32)
 ```
+
 ### Example
+
 
 ```golang
 import (

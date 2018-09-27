@@ -22,7 +22,7 @@ See [Contact and On-Call Information](https://bukalapak.atlassian.net/wiki/displ
 
 Akyuu is composed of 2 function, `New` and `Fetch`.
 
-`New` need a dallimin Ring struct as parameter.
+`New` need a dallimin's Ring struct as parameter.
 ```golang
 func New(*dallimin.Ring) (*Connection, error)
 ```
